@@ -27,7 +27,7 @@ type SetDrawCaptchaServiceOptions func(s *SimpleDrawCaptchaService)
 func SetDriverType(typ string) SetDrawCaptchaServiceOptions {
 	return func(s *SimpleDrawCaptchaService) {
 		s.driver = base64Captcha.NewDriverString(128, 256, 5, base64Captcha.OptionShowHollowLine,
-			4, "aa04597427053978fc168df1129ae74a78739e1b", nil, nil)
+			4, "aa04597427053978fc168df1129ae74a78739e1b", nil, nil, nil)
 	}
 }
 
