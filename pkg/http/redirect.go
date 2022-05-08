@@ -35,7 +35,7 @@ type writeFlusher interface {
 	http.Flusher
 }
 
-func RedirectHandler(c *gin.Context, urlAddress string) {
+func RedirectHandler(c *gin.Context, urlAddress string, urlPrefix string) {
 	u, err := url.Parse(urlAddress)
 	if err != nil {
 		log.Fatal("parse", err)
@@ -43,7 +43,7 @@ func RedirectHandler(c *gin.Context, urlAddress string) {
 	switch c.Request.Method {
 	case http.MethodGet:
 		u.Scheme = "http"
-		proxy := NewSingleHostReverseProxy(u)
+		proxy := NewSingleHostReverseProxy(u, urlPrefix)
 		proxy.ErrorHandler = func(rw http.ResponseWriter, req *http.Request, err error) {
 			ret := fmt.Sprintf("http proxy error %v", err)
 			rw.Write([]byte(ret))
@@ -51,7 +51,23 @@ func RedirectHandler(c *gin.Context, urlAddress string) {
 		proxy.ServeHTTP(c.Writer, c.Request)
 	case http.MethodPost:
 		u.Scheme = "http"
-		proxy := NewSingleHostReverseProxy(u)
+		proxy := NewSingleHostReverseProxy(u, urlPrefix)
+		proxy.ErrorHandler = func(rw http.ResponseWriter, req *http.Request, err error) {
+			ret := fmt.Sprintf("http proxy error %v", err)
+			rw.Write([]byte(ret))
+		}
+		proxy.ServeHTTP(c.Writer, c.Request)
+	case http.MethodPut:
+		u.Scheme = "http"
+		proxy := NewSingleHostReverseProxy(u, urlPrefix)
+		proxy.ErrorHandler = func(rw http.ResponseWriter, req *http.Request, err error) {
+			ret := fmt.Sprintf("http proxy error %v", err)
+			rw.Write([]byte(ret))
+		}
+		proxy.ServeHTTP(c.Writer, c.Request)
+	case http.MethodDelete:
+		u.Scheme = "http"
+		proxy := NewSingleHostReverseProxy(u, urlPrefix)
 		proxy.ErrorHandler = func(rw http.ResponseWriter, req *http.Request, err error) {
 			ret := fmt.Sprintf("http proxy error %v", err)
 			rw.Write([]byte(ret))
@@ -124,11 +140,12 @@ type ReverseProxy struct {
 // NewSingleHostReverseProxy does not rewrite the Host header.
 // To rewrite Host headers, use ReverseProxy directly with a custom
 // Director policy.
-func NewSingleHostReverseProxy(target *url.URL) *ReverseProxy {
+func NewSingleHostReverseProxy(target *url.URL, urlPrefix string) *ReverseProxy {
 	targetQuery := target.RawQuery
 	director := func(req *http.Request) {
 		req.URL.Scheme = target.Scheme
 		req.URL.Host = target.Host
+		req.URL.Path = req.URL.Path[len(urlPrefix):]
 		req.URL.Path, req.URL.RawPath = joinURLPath(target, req.URL)
 		if targetQuery == "" || req.URL.RawQuery == "" {
 			req.URL.RawQuery = targetQuery + req.URL.RawQuery

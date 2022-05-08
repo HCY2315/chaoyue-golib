@@ -1,9 +1,0 @@
-{
-  "apollo": {
-    "appId": "blackwordserver",
-    "cluster": "default",
-    "namespaces": ["config.yaml","global.properties"],
-    "metaAddr":"http://10.155.20.146:8180",
-    "cacheDir": "."
-  }
-}
