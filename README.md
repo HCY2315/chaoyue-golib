@@ -1,2 +1,3 @@
-# chaoyue-golib
-Golang Lib 库
+# cecf-golib
+
+汇通通用，golang lib 库

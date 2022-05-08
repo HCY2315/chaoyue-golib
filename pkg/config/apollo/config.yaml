@@ -1,0 +1,13 @@
+
+cluster:
+  domain: '11'
+  id: '15001'
+
+apollo:
+  app_id: blackwordserver
+  cluster: default
+  namespaces:
+    - config.yaml
+    - global.properties
+  meta_addr: 'http://10.155.19.204:8180'
+  cache_dir: .
