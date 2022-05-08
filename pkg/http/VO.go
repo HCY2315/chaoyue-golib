@@ -1,6 +1,6 @@
 package http
 
-import "git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
+import "github.com/HCY2315/chaoyue-golib/pkg/errors"
 
 // 应避免使用属性
 type PageQueryParams struct {

@@ -1,9 +1,10 @@
 package gin
 
 import (
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/errors"
+	"github.com/gin-gonic/gin"
 )
 
 type GeneralGinHandleFunc func(*gin.Context) (interface{}, error)

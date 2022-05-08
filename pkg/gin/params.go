@@ -1,10 +1,11 @@
 package gin
 
 import (
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
-	"github.com/gin-gonic/gin"
 	"strconv"
 	"strings"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/errors"
+	"github.com/gin-gonic/gin"
 )
 
 func UIntListFromQuery(c *gin.Context, key string) ([]uint, error) {

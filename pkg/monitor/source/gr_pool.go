@@ -1,7 +1,7 @@
 package source
 
 import (
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/monitor/metrics"
+	"github.com/HCY2315/chaoyue-golib/pkg/monitor/metrics"
 )
 
 type GrPoolMetrics struct {

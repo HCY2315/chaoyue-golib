@@ -5,8 +5,9 @@ import (
 	"crypto/cipher"
 	"crypto/rand"
 	"fmt"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
 	"io"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/errors"
 )
 
 type GCMCipher struct {

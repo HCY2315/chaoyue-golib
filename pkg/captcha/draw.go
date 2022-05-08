@@ -2,10 +2,11 @@ package captcha
 
 import (
 	"context"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/log"
+	"time"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/log"
 	"github.com/go-redis/redis/v8"
 	"github.com/mojocn/base64Captcha"
-	"time"
 )
 
 // 图形验证码

@@ -1,10 +1,11 @@
 package limit_test
 
 import (
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/limit"
-	. "github.com/smartystreets/goconvey/convey"
 	"testing"
 	"time"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/limit"
+	. "github.com/smartystreets/goconvey/convey"
 )
 
 func TestBuildFixedMinuteDurationResolve(t *testing.T) {

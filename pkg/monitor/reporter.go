@@ -4,11 +4,11 @@ import (
 	"context"
 	"time"
 
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/task"
+	"github.com/HCY2315/chaoyue-golib/pkg/task"
 
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/monitor/metrics"
+	"github.com/HCY2315/chaoyue-golib/pkg/monitor/metrics"
 
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/monitor/source"
+	"github.com/HCY2315/chaoyue-golib/pkg/monitor/source"
 
 	"github.com/google/uuid"
 )

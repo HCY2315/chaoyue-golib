@@ -1,8 +1,9 @@
 package common
 
 import (
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
 	"time"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/errors"
 )
 
 type NamedValues interface {

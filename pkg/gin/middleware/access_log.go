@@ -1,9 +1,10 @@
 package middleware
 
 import (
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/log"
-	"github.com/gin-gonic/gin"
 	"time"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/log"
+	"github.com/gin-gonic/gin"
 )
 
 func BuildAccessLogMiddleware(logTag string) gin.HandlerFunc {

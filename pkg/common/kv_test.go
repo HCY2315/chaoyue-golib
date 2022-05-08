@@ -1,14 +1,15 @@
 package common
 
 import (
-	errors2 "git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/utils"
-	"github.com/pkg/errors"
-	. "github.com/smartystreets/goconvey/convey"
-	"github.com/stretchr/testify/assert"
 	"math/rand"
 	"testing"
 	"time"
+
+	errors2 "github.com/HCY2315/chaoyue-golib/pkg/errors"
+	"github.com/HCY2315/chaoyue-golib/pkg/utils"
+	"github.com/pkg/errors"
+	. "github.com/smartystreets/goconvey/convey"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestMemNamedValuesGetHook(t *testing.T) {

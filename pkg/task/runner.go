@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/log"
+	"github.com/HCY2315/chaoyue-golib/pkg/log"
 )
 
 type RunErrHandler func(item ScheduleItem, err error)

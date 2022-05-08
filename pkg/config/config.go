@@ -2,9 +2,10 @@
 package config
 
 import (
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
-	"github.com/ghodss/yaml"
 	"io/ioutil"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/errors"
+	"github.com/ghodss/yaml"
 )
 
 func CfgFromFile(cfgPath string, value interface{}) error {

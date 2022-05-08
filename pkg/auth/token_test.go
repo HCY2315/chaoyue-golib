@@ -1,11 +1,12 @@
 package auth
 
 import (
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/common"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/utils"
-	. "github.com/smartystreets/goconvey/convey"
 	"testing"
 	"time"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/common"
+	"github.com/HCY2315/chaoyue-golib/pkg/utils"
+	. "github.com/smartystreets/goconvey/convey"
 )
 
 func TestJwtTokenBuilder(t *testing.T) {

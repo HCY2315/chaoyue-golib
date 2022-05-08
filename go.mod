@@ -1,4 +1,4 @@
-module git.cestong.com.cn/cecf/cecf-golib
+module github.com/HCY2315/chaoyue-golib
 
 go 1.17
 

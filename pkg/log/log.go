@@ -6,8 +6,9 @@ package log
 
 import (
 	"fmt"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/utils"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/errors"
+	"github.com/HCY2315/chaoyue-golib/pkg/utils"
 )
 
 // ILogger 是日志的最小化功能, 以保证实现的可替代性

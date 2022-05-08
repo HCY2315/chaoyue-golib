@@ -1,6 +1,6 @@
 package common
 
-import "git.cestong.com.cn/cecf/cecf-golib/pkg/utils"
+import "github.com/HCY2315/chaoyue-golib/pkg/utils"
 
 func DistinctIntList(listList ...[]int) []int {
 	m := make(map[int]EmptyStruct, 1*utils.KB)

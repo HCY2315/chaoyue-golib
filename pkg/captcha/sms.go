@@ -2,12 +2,13 @@ package captcha
 
 import (
 	"context"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/log"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/thirdparty"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/utils"
-	"github.com/go-redis/redis/v8"
 	"time"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/errors"
+	"github.com/HCY2315/chaoyue-golib/pkg/log"
+	"github.com/HCY2315/chaoyue-golib/pkg/thirdparty"
+	"github.com/HCY2315/chaoyue-golib/pkg/utils"
+	"github.com/go-redis/redis/v8"
 )
 
 var (

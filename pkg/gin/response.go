@@ -1,6 +1,6 @@
 package gin
 
-import "git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
+import "github.com/HCY2315/chaoyue-golib/pkg/errors"
 
 type GeneralVO struct {
 	Code int    `json:"code"`

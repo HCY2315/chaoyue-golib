@@ -2,15 +2,16 @@ package middleware
 
 import (
 	"fmt"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
-	gin2 "git.cestong.com.cn/cecf/cecf-golib/pkg/gin"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/log"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/thirdparty"
+	"net/http"
+	"strings"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/errors"
+	gin2 "github.com/HCY2315/chaoyue-golib/pkg/gin"
+	"github.com/HCY2315/chaoyue-golib/pkg/log"
+	"github.com/HCY2315/chaoyue-golib/pkg/thirdparty"
 	"github.com/gin-gonic/gin"
 	ut "github.com/go-playground/universal-translator"
 	"github.com/go-playground/validator/v10"
-	"net/http"
-	"strings"
 )
 
 type ErrMiddlewareCallback func(code, status int, msg string, ctx *gin.Context)

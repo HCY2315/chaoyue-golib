@@ -1,8 +1,8 @@
 package config
 
 import (
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/utils"
+	"github.com/HCY2315/chaoyue-golib/pkg/errors"
+	"github.com/HCY2315/chaoyue-golib/pkg/utils"
 )
 
 type AppConfig struct {

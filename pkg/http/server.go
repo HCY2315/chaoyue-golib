@@ -3,12 +3,13 @@ package http
 import (
 	"context"
 	"fmt"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/log"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/tcp"
 	"net/http"
 	"strconv"
 	"time"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/errors"
+	"github.com/HCY2315/chaoyue-golib/pkg/log"
+	"github.com/HCY2315/chaoyue-golib/pkg/tcp"
 )
 
 type HTTPServer struct {

@@ -2,11 +2,12 @@ package middleware
 
 import (
 	"fmt"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/log"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/thirdparty"
-	"github.com/gin-gonic/gin"
 	"net/http"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/errors"
+	"github.com/HCY2315/chaoyue-golib/pkg/log"
+	"github.com/HCY2315/chaoyue-golib/pkg/thirdparty"
+	"github.com/gin-gonic/gin"
 )
 
 type PanicHandler func(r interface{}, c *gin.Context)

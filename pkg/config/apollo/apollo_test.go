@@ -4,8 +4,8 @@ import (
 	"log"
 	"testing"
 
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/config"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/config/apollo/agollo"
+	"github.com/HCY2315/chaoyue-golib/pkg/config"
+	"github.com/HCY2315/chaoyue-golib/pkg/config/apollo/agollo"
 
 	"github.com/spf13/viper"
 )

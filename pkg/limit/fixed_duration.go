@@ -2,10 +2,11 @@ package limit
 
 import (
 	"context"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
-	"github.com/go-redis/redis/v8"
 	"strconv"
 	"time"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/errors"
+	"github.com/go-redis/redis/v8"
 )
 
 //FixedDurationLimiter 固定时间段内访问限制，超过时间段后重置

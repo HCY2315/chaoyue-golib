@@ -1,7 +1,7 @@
 package apollo
 
 import (
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/config/global"
+	"github.com/HCY2315/chaoyue-golib/pkg/config/global"
 	"github.com/spf13/viper"
 )
 

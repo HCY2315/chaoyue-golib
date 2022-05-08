@@ -2,11 +2,12 @@ package middleware
 
 import (
 	"bytes"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/log"
-	"github.com/gin-gonic/gin"
 	"io"
 	"io/ioutil"
 	"strings"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/log"
+	"github.com/gin-gonic/gin"
 )
 
 const CtxKeyDebugReqBody = "hx:debug:body"

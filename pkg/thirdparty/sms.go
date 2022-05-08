@@ -2,8 +2,9 @@ package thirdparty
 
 import (
 	"encoding/json"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/errors"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/utils"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/errors"
+	"github.com/HCY2315/chaoyue-golib/pkg/utils"
 	openapi "github.com/alibabacloud-go/darabonba-openapi/client"
 	dys "github.com/alibabacloud-go/dysmsapi-20170525/v2/client"
 	"github.com/alibabacloud-go/tea/tea"

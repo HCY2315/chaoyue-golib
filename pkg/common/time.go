@@ -3,8 +3,9 @@ package common
 import (
 	"database/sql/driver"
 	"encoding/json"
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/utils"
 	"time"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/utils"
 )
 
 type CETime time.Time

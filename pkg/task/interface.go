@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"time"
 
-	"git.cestong.com.cn/cecf/cecf-golib/pkg/microservice"
+	"github.com/HCY2315/chaoyue-golib/pkg/microservice"
 
 	"github.com/google/uuid"
 )
