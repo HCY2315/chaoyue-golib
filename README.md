@@ -1,3 +1,3 @@
-# cecf-golib
+# chaoyue-golib
 
-汇通通用，golang lib 库
+超越专用，golang lib 库
