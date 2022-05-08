@@ -41,42 +41,16 @@ func RedirectHandler(c *gin.Context, urlAddress string, urlPrefix string) {
 		log.Fatal("parse", err)
 	}
 	switch c.Request.Method {
-	case http.MethodGet:
-		u.Scheme = "http"
-		proxy := NewSingleHostReverseProxy(u, urlPrefix)
-		proxy.ErrorHandler = func(rw http.ResponseWriter, req *http.Request, err error) {
-			ret := fmt.Sprintf("http proxy error %v", err)
-			rw.Write([]byte(ret))
-		}
-		proxy.ServeHTTP(c.Writer, c.Request)
-	case http.MethodPost:
-		u.Scheme = "http"
-		proxy := NewSingleHostReverseProxy(u, urlPrefix)
-		proxy.ErrorHandler = func(rw http.ResponseWriter, req *http.Request, err error) {
-			ret := fmt.Sprintf("http proxy error %v", err)
-			rw.Write([]byte(ret))
-		}
-		proxy.ServeHTTP(c.Writer, c.Request)
-	case http.MethodPut:
-		u.Scheme = "http"
-		proxy := NewSingleHostReverseProxy(u, urlPrefix)
-		proxy.ErrorHandler = func(rw http.ResponseWriter, req *http.Request, err error) {
-			ret := fmt.Sprintf("http proxy error %v", err)
-			rw.Write([]byte(ret))
-		}
-		proxy.ServeHTTP(c.Writer, c.Request)
-	case http.MethodDelete:
-		u.Scheme = "http"
-		proxy := NewSingleHostReverseProxy(u, urlPrefix)
-		proxy.ErrorHandler = func(rw http.ResponseWriter, req *http.Request, err error) {
-			ret := fmt.Sprintf("http proxy error %v", err)
-			rw.Write([]byte(ret))
-		}
-		proxy.ServeHTTP(c.Writer, c.Request)
 	case http.MethodOptions:
 		c.AbortWithStatusJSON(http.StatusOK, nil)
+	default:
+		proxy := NewSingleHostReverseProxy(u, urlPrefix)
+		proxy.ErrorHandler = func(rw http.ResponseWriter, req *http.Request, err error) {
+			ret := fmt.Sprintf("http proxy error %v", err)
+			rw.Write([]byte(ret))
+		}
+		proxy.ServeHTTP(c.Writer, c.Request)
 	}
-	return
 }
 
 type ReverseProxy struct {
