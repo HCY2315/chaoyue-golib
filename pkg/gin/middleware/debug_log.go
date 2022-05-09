@@ -10,7 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-const CtxKeyDebugReqBody = "hx:debug:body"
+const CtxKeyDebugReqBody = "chaoyue:debug:body"
 
 //RequestBodyToContext 读取请求body到context, 只能在debug阶段使用
 func RequestBodyToContext() gin.HandlerFunc {
@@ -40,10 +40,11 @@ func readBody(reader io.Reader) string {
 
 func DebugLog() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
-		log.Debugf("[%s] %s", ctx.Request.Method, ctx.Request.URL.Path)
+		log.Debugf("")
 		log.Debugf(strings.Repeat(">", 20))
-		log.Debugf(ctx.GetString(CtxKeyDebugReqBody))
+		log.Debugf("[%s] %s", ctx.Request.Method, ctx.Request.URL.Path)
+		log.Debugf("[Context] :" + ctx.GetString(CtxKeyDebugReqBody))
 		log.Debugf(strings.Repeat("<", 20))
-		log.Debugf(strings.Repeat("*", 20))
+		log.Debugf("")
 	}
 }
