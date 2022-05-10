@@ -27,6 +27,7 @@ func (t *JsonTime) UnmarshalJSON(data []byte) (err error) {
 	return err
 }
 
+// before current time for true
 func (t JsonTime) Before(u JsonTime) bool {
 	return time.Time(t).Before(time.Time(u))
 }
