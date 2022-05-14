@@ -6,8 +6,8 @@ import (
 	"net/http/httputil"
 	"net/url"
 
+	"github.com/HCY2315/chaoyue-golib/log"
 	cecfHTTP "github.com/HCY2315/chaoyue-golib/pkg/http"
-	"github.com/HCY2315/chaoyue-golib/pkg/log"
 	"github.com/gin-gonic/gin"
 	"github.com/vulcand/oxy/utils"
 )

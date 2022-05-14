@@ -3,7 +3,7 @@ package middleware
 import (
 	"time"
 
-	"github.com/HCY2315/chaoyue-golib/pkg/log"
+	"github.com/HCY2315/chaoyue-golib/log"
 	"github.com/gin-gonic/gin"
 )
 
