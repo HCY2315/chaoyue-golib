@@ -12,7 +12,7 @@ type RunMode string
 
 const (
 	DevMode        RunMode = "dev"
-	ProductionMode         = "production"
+	ProductionMode RunMode = "production"
 )
 
 var modeMap = map[RunMode]struct{}{

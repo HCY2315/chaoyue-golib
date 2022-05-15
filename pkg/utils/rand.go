@@ -33,7 +33,7 @@ func RandAscii(size int) string {
 		panic("size negative")
 	}
 	bs := make([]byte, size)
-	for i, _ := range bs {
+	for i := range bs {
 		bs[i] = byte(RandIntRange(32, 96))
 	}
 	return string(bs)
