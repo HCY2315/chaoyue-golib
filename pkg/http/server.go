@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/HCY2315/chaoyue-golib/log"
 	"github.com/HCY2315/chaoyue-golib/pkg/errors"
-	"github.com/HCY2315/chaoyue-golib/pkg/log"
 	"github.com/HCY2315/chaoyue-golib/pkg/tcp"
 )
 

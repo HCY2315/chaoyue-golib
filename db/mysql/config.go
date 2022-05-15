@@ -13,7 +13,8 @@ type DBConfig struct {
 	connMaxLifetime int
 	maxIdleConns    int
 	maxOpenConns    int
-	registers       []ResolverConfigure
+	// mysql 从节点配置
+	registers []ResolverConfigure
 }
 
 // NewConfigure 初始化 Configure

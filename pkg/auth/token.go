@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/HCY2315/chaoyue-golib/log"
 	"github.com/HCY2315/chaoyue-golib/pkg/common"
 	"github.com/HCY2315/chaoyue-golib/pkg/errors"
-	"github.com/HCY2315/chaoyue-golib/pkg/log"
 	"github.com/HCY2315/chaoyue-golib/pkg/utils"
 	"github.com/golang-jwt/jwt"
 )

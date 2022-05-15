@@ -6,8 +6,8 @@ import (
 	"io/ioutil"
 	"net/http"
 
+	"github.com/HCY2315/chaoyue-golib/log"
 	"github.com/HCY2315/chaoyue-golib/pkg/errors"
-	"github.com/HCY2315/chaoyue-golib/pkg/log"
 )
 
 type SNSInfoReqVO struct {

@@ -7,7 +7,7 @@ import (
 	"net/url"
 
 	"github.com/HCY2315/chaoyue-golib/log"
-	cecfHTTP "github.com/HCY2315/chaoyue-golib/pkg/http"
+	chaoyueHTTP "github.com/HCY2315/chaoyue-golib/pkg/http"
 	"github.com/gin-gonic/gin"
 	"github.com/vulcand/oxy/utils"
 )
@@ -20,7 +20,7 @@ type ReqRewriteFunc func(*http.Request)
 
 func RefererHeaderRewrite(referer string) ReqRewriteFunc {
 	return func(req *http.Request) {
-		req.Header.Set(cecfHTTP.HeaderKeyReferer, referer)
+		req.Header.Set(chaoyueHTTP.HeaderKeyReferer, referer)
 	}
 }
 

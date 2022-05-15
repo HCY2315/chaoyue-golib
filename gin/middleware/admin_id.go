@@ -8,7 +8,7 @@ import (
 type AdminIDFinder func(c *gin.Context) (uint, bool)
 
 const (
-	CtxAdminIdKey = "hx:adminID"
+	CtxAdminIdKey = "chaoyue:adminID"
 )
 
 const (

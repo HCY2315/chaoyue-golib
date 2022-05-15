@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/HCY2315/chaoyue-golib/pkg/log"
+	"github.com/HCY2315/chaoyue-golib/log"
 	"github.com/go-redis/redis/v8"
 	"github.com/mojocn/base64Captcha"
 )
