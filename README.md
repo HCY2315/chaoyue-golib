@@ -4,6 +4,22 @@
 
 ## 一、使用案例
 
+### 4、go prometheus 使用案例
+```go
+func main() {
+	ghf := chaoyueMiddleware.ExcludeByPath("/_metrics")
+	prometheusMiddleware := chaoyueMiddleware.NewPrometheusExporter("chaoyue", "127.0.0.1", "127.0.0.1", ghf)
+	r.Use(prometheusMiddleware.HandleFunc)
+	r.GET("/info", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "ping",
+		})
+	})
+	r.GET("/metrics", prometheusMiddleware.ExportMetricsHandler())
+	r.Run(":8490")
+}
+```
+
 ### 3、GORM 使用案例
 ```go
 package main
