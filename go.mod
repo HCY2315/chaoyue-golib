@@ -59,6 +59,7 @@ require (
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
+	github.com/opentracing/opentracing-go v1.1.0
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/power-devops/perfstat v0.0.0-20220216144756-c35f1ee13d7c // indirect
 	github.com/prometheus/client_model v0.2.0 // indirect
@@ -79,60 +80,10 @@ require (
 	gopkg.in/ini.v1 v1.66.4 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
+	gorm.io/plugin/dbresolver v1.2.1
 )
 
 require (
-	github.com/AlecAivazis/survey/v2 v2.3.4 // indirect
-	github.com/BurntSushi/toml v1.1.0 // indirect
-	github.com/Knetic/govaluate v3.0.1-0.20171022003610-9aa49832a739+incompatible // indirect
-	github.com/Masterminds/goutils v1.1.1 // indirect
-	github.com/Masterminds/semver/v3 v3.1.1 // indirect
-	github.com/Masterminds/sprig/v3 v3.2.2 // indirect
-	github.com/andygrunwald/go-jira v1.15.1 // indirect
-	github.com/bsm/redislock v0.7.2 // indirect
-	github.com/casbin/casbin/v2 v2.47.1 // indirect
-	github.com/chanxuehong/rand v0.0.0-20211009035549-2f07823e8e99 // indirect
-	github.com/chanxuehong/wechat v0.0.0-20211009063332-41a5c6d8b38b // indirect
-	github.com/coreos/go-semver v0.3.0 // indirect
-	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
-	github.com/fatih/color v1.13.0 // indirect
-	github.com/fatih/structs v1.1.0 // indirect
-	github.com/git-chglog/git-chglog v0.15.1 // indirect
-	github.com/go-admin-team/go-admin-core v1.3.10 // indirect
-	github.com/go-admin-team/go-admin-core/sdk v1.3.11 // indirect
-	github.com/go-redis/redis/v7 v7.4.1 // indirect
-	github.com/go-sql-driver/mysql v1.6.0 // indirect
-	github.com/golang-jwt/jwt/v4 v4.4.1 // indirect
-	github.com/golang/snappy v0.0.4 // indirect
-	github.com/google/go-querystring v1.1.0 // indirect
-	github.com/huandu/xstrings v1.3.2 // indirect
-	github.com/imdario/mergo v0.3.12 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
-	github.com/jinzhu/now v1.1.5 // indirect
-	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect
-	github.com/kyokomi/emoji/v2 v2.2.9 // indirect
-	github.com/mattn/go-colorable v0.1.12 // indirect
-	github.com/mattn/goveralls v0.0.2 // indirect
-	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d // indirect
-	github.com/mitchellh/copystructure v1.2.0 // indirect
-	github.com/mitchellh/reflectwalk v1.0.2 // indirect
-	github.com/nsqio/go-nsq v1.1.0 // indirect
-	github.com/opentracing/opentracing-go v1.2.0 // indirect
-	github.com/robfig/cron/v3 v3.0.1 // indirect
-	github.com/robinjoseph08/redisqueue/v2 v2.1.0 // indirect
-	github.com/russross/blackfriday/v2 v2.1.0 // indirect
-	github.com/shopspring/decimal v1.3.1 // indirect
-	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
-	github.com/spf13/cast v1.3.1 // indirect
-	github.com/trivago/tgo v1.0.7 // indirect
-	github.com/tsuyoshiwada/go-gitcmd v0.0.0-20180205145712-5f1f5f9475df // indirect
-	github.com/urfave/cli v1.22.9 // indirect
-	github.com/urfave/cli/v2 v2.3.0 // indirect
-	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
-	golang.org/x/tools v0.1.5 // indirect
-	golang.org/x/xerrors v0.0.0-20220411194840-2f41105eb62f // indirect
-	gopkg.in/AlecAivazis/survey.v1 v1.8.8 // indirect
-	gopkg.in/kyokomi/emoji.v1 v1.5.1 // indirect
-	gorm.io/driver/mysql v1.3.3 // indirect
-	gorm.io/plugin/dbresolver v1.2.0 // indirect
+	github.com/jinzhu/now v1.1.4 // indirect
 )

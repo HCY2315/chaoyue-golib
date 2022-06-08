@@ -70,7 +70,6 @@ func (r *RedisDrawCaptchaStore) Set(id string, value string) {
 	if err != nil {
 		log.Errorf("set draw captcha %s", err.Error())
 	}
-	return
 }
 
 func idToKey(prefix, id string) string {
