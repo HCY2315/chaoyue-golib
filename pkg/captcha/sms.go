@@ -4,7 +4,6 @@ import (
 	"context"
 	"time"
 
-	"github.com/HCY2315/chaoyue-golib/log"
 	"github.com/HCY2315/chaoyue-golib/pkg/errors"
 	"github.com/HCY2315/chaoyue-golib/pkg/thirdparty"
 	"github.com/HCY2315/chaoyue-golib/pkg/utils"
@@ -18,45 +17,6 @@ var (
 type SMSVerifyService interface {
 	SendCodeToPhone(phone string) error
 	VerifyMatch(phone, code string) (bool, error)
-}
-
-type DebugSMSVerify struct {
-}
-
-func (d DebugSMSVerify) SendCodeToPhone(phone string) error {
-	log.Debugf("[SMS] send code to phone %s", phone)
-	return nil
-}
-
-func (d DebugSMSVerify) VerifyMatch(phone, code string) (bool, error) {
-	log.Debugf("[SMS] check phone %s match code %s", phone, code)
-	return true, nil
-}
-
-func NewDebugSMSVerify() *DebugSMSVerify {
-	return &DebugSMSVerify{}
-}
-
-// refactor factory
-type SMSVerifyWithSuperCode struct {
-	superCode string
-	impl      SMSVerifyService
-}
-
-func (s *SMSVerifyWithSuperCode) SendCodeToPhone(phone string) error {
-	return s.impl.SendCodeToPhone(phone)
-}
-
-func (s *SMSVerifyWithSuperCode) VerifyMatch(phone, code string) (bool, error) {
-	if code == s.superCode {
-		log.Warnf("SMS verify %s using SUPER-CODE", phone)
-		return true, nil
-	}
-	return s.impl.VerifyMatch(phone, code)
-}
-
-func NewSMSVerifyWithSuperCode(superCode string, impl SMSVerifyService) *SMSVerifyWithSuperCode {
-	return &SMSVerifyWithSuperCode{superCode: superCode, impl: impl}
 }
 
 // refactor kv store
