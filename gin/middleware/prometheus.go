@@ -1,12 +1,13 @@
 package middleware
 
 import (
+	"strconv"
+	"time"
+
 	"github.com/gin-gonic/gin"
 	pcg "github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"strconv"
-	"time"
 )
 
 type GinHandlerFilterFunc func(c *gin.Context) bool
@@ -57,14 +58,13 @@ func (p *PrometheusExporter) HandleFunc(c *gin.Context) {
 	begin := time.Now()
 	c.Next()
 	status := c.Writer.Status()
-	latency := time.Now().Sub(begin).Milliseconds()
+	latency := time.Since(begin).Milliseconds()
 	labels := pcg.Labels{
 		"method": method,
 		"status": strconv.Itoa(status),
 		"path":   c.Request.URL.Path,
 	}
 	p.latencyHistogram.ObserveWithExemplar(float64(latency), labels)
-	return
 }
 
 func (p *PrometheusExporter) ExportMetricsHandler() gin.HandlerFunc {
