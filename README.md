@@ -4,6 +4,33 @@
 
 ## 一、使用案例
 
+### 6、线程池
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/HCY2315/chaoyue-golib/pkg/threads"
+)
+
+type name struct {
+	i int
+}
+
+func main() {
+	wn := threads.CreateWorker(10)
+	for i := 1; i <= 100; i++ {
+		n := new(name)
+		n.i = i
+		wn.Run(func() {
+			fmt.Printf("[%d]:hello threads pool\n", n.i)
+		})
+	}
+	wn.Wait()
+}
+```
+
 ### 5、手机验证码
 ```go
 // 阿里云的
