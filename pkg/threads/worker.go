@@ -6,19 +6,20 @@ import (
 	"github.com/HCY2315/chaoyue-golib/log"
 )
 
-type worker struct {
+type Worker struct {
 	workerNum int
 	workerCh  chan bool
 }
 
-func CreateWorker(workerNum int) *worker {
-	return &worker{
+func CreateWorker(workerNum int) *Worker {
+	return &Worker{
 		workerNum: workerNum,
 		workerCh:  make(chan bool, workerNum),
 	}
 }
 
-func (w *worker) Run(taskFunc func()) {
+// running mult-gorouting
+func (w *Worker) Run(taskFunc func()) {
 	w.workerCh <- true
 	go func() {
 		defer func() { <-w.workerCh }()
@@ -28,10 +29,10 @@ func (w *worker) Run(taskFunc func()) {
 
 // Notice: if there is a guard in the main program, then this funcation is not used
 // Used Way: put at the end of the main program
-func (w *worker) Wait() {
+func (w *Worker) Wait() {
 	for len(w.workerCh) != 0 && w.workerNum != 0 {
-		time.Sleep(time.Second * 1)
 		log.Infof("There is also gorouting running, the number of runs is %d", len(w.workerCh))
+		time.Sleep(time.Second)
 	}
 	log.Infof("All gorouting is running done")
 }
