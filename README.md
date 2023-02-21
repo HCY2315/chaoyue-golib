@@ -3,6 +3,53 @@
 超越专用，golang lib 库
 
 ## 一、使用案例
+### 7、线程池
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/HCY2315/chaoyue-golib/pkg/threads"
+	"runtime"
+	"time"
+)
+
+// 定义一个实现Job接口的数据
+type Score struct {
+	Num int
+}
+
+// 定义对数据的处理
+func (s *Score) Do() {
+	fmt.Println("num:", s.Num)
+	//time.Sleep(1 * time.Millisecond) //模拟执行的耗时任务
+}
+
+func main() {
+	num := 100 * 100 * 2 //开启 2万个线程
+	// debug.SetMaxThreads(num + 1000) //设置最大线程数
+	// 注册工作池，传入任务
+	// 参数1 worker并发个数
+	p := threads.NewWorkerPool(num)
+	p.Run()
+
+	//写入一千万条数据
+	dataNum := 100 * 100 * 100 * 10
+	go func() {
+		for i := 1; i <= dataNum; i++ {
+			sc := &Score{Num: i}
+			p.JobQueue <- sc //数据传进去会被自动执行Do()方法，具体对数据的处理自己在Do()方法中定义
+		}
+	}()
+	//循环打印输出当前进程的Goroutine 个数
+	for {
+		fmt.Println("runtime.NumGoroutine() :", runtime.NumGoroutine())
+		time.Sleep(5 * time.Second)
+	}
+
+}
+
+```
 
 ### 6、线程池
 ```go

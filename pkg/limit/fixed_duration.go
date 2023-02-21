@@ -58,7 +58,7 @@ func (r *RedisFixedDurationLimiter) TryAccess(id string) (bool, time.Time, error
 		if errExpire := r.redisCli.Expire(ctx, key, ttl).Err(); errExpire != nil {
 			return false, nextTry, errors.Wrap(errExpire, "expire %s", key)
 		}
-	}
+	}u
 	if nowCnt > r.limitUpper {
 		return false, nextTry, nil
 	}
