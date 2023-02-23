@@ -2,6 +2,7 @@ package threads
 
 import (
 	"fmt"
+	//"time"
 )
 //type Worker struct {
 //	workerNum int
@@ -56,10 +57,14 @@ func NewWorker() Worker {
 
 func (w Worker) Run(wq chan JobQueue) {
 	go func() {
-		wq <- w.jobChan
-		select {
-		case job := <- w.jobChan:
-			job.Do()
+		// for 循环为了维护进程池的数
+		for {
+			// 注册工作通道  到 线程池
+			wq <- w.jobChan
+			select {
+			case job := <-w.jobChan: // 读到参数
+				job.Do()
+			}
 		}
 	}()
 }
@@ -67,7 +72,7 @@ func (w Worker) Run(wq chan JobQueue) {
 func NewWorkerPool(workerLen int) *WorkerPool{
 	return &WorkerPool{
 		WorkerLen:workerLen,
-		JobQueue:(make(JobQueue)),
+		JobQueue:make(JobQueue),
 		WorkerQueue: make(chan JobQueue, workerLen),
 	}
 }
@@ -84,8 +89,8 @@ func (wp *WorkerPool) Run() {
 		for {
 			select {
 			//将JobQueue中的数据存入WorkerQueue
-			case job := <-wp.JobQueue: //线程池中有需要待处理的任务(数据来自于请求的任务) :读取JobQueue中的内容
-				worker := <-wp.WorkerQueue //队列中有空闲的Go程   ：读取WorkerQueue中的内容,类型为：JobQueue
+			case job := <- wp.JobQueue: //线程池中有需要待处理的任务(数据来自于请求的任务) :读取JobQueue中的内容
+				worker := <- wp.WorkerQueue //队列中有空闲的Go程   ：读取WorkerQueue中的内容,类型为：JobQueue
 				worker <- job              //空闲的Go程执行任务  ：整个job入队列（channel） 类型为：传递的参数（Score结构体）
 				//fmt.Println("xxx1:",worker)
 				//fmt.Printf("====%T  ;  %T======\n",job,worker,)
