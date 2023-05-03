@@ -28,7 +28,7 @@ func (c *Clauses) Like(column, value string) *Clauses {
 	return c
 }
 
-func (c *Clauses) PageAndOrder(offset int, limit int, orderByColumn string, isDesc bool) *Clauses {
+func (c *Clauses) PageAndOrder(offset int, limit *int, orderByColumn string, isDesc bool) *Clauses {
 	c.cls = append(c.cls, clause.OrderBy{
 		Columns: []clause.OrderByColumn{
 			{
