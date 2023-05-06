@@ -3,6 +3,26 @@
 超越专用，golang lib 库
 
 ## 一、使用案例
+### 8、限流中间件（令牌桶）
+```go
+package main
+
+import (
+	"github.com/HCY2315/chaoyue-golib/gin/middleware"
+	"github.com/gin-gonic/gin"
+)
+
+func main() {
+	r := gin.Default()
+	// 在路由中使用中间件
+	r.Use(middleware.NewTokenBucket(100, 100).LimitHandler())
+	r.GET("/", func(c *gin.Context) {
+		c.String(200, "Hello, World!")
+	})
+	r.Run(":8080")
+}
+```
+
 ### 7、线程池
 ```go
 package main
