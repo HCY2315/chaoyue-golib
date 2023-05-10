@@ -3,6 +3,27 @@
 超越专用，golang lib 库
 
 ## 一、使用案例
+### 9、翻译
+
+```go
+package main
+
+import (
+	"fmt"
+	"github.com/HCY2315/chaoyue-golib/pkg/translate"
+)
+
+func main() {
+	nuq := translate.NewUrlQueue("auto", "apple", "zh", "ww", "ww")
+	tr, err := nuq.Translate()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(tr.TransResult[0].Dst)
+}
+```
+
 ### 8、限流中间件（令牌桶）
 ```go
 package main
